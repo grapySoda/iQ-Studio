@@ -1,0 +1,44 @@
+{
+  "starting-guides": {
+    "title": "Starting Guides",
+    "description": "Quick-start guides for hardware setup, image flashing, and OTA updates on the Innodisk Qualcomm Dragonwing platform.",
+    "current": "starting-guides/index",
+    "depth": 1,
+    "output": "starting-guides/index.html"
+  },
+  "applications": {
+    "title": "Applications",
+    "description": "Pre-built inference demos for iQ-Studio: VLM, multi-stream Streampipe, and YOLOv10n on Qualcomm QCS9075.",
+    "current": "applications/index",
+    "depth": 1,
+    "output": "applications/index.html"
+  },
+  "avl": {
+    "title": "Approved Vendor List",
+    "description": "Validated GMSL and MIPI CSI-2 cameras for the Innodisk Qualcomm Dragonwing platform with driver setup and demo verification.",
+    "current": "avl/index",
+    "depth": 1,
+    "output": "avl/index.html"
+  },
+  "model-deploy": {
+    "title": "Model Deploy",
+    "description": "End-to-end guides for turning trained AI models into target-ready artifacts: quantization, conversion, validation, and inference.",
+    "current": "model-deploy/index",
+    "depth": 1,
+    "output": "model-deploy/index.html"
+  },
+  "sdks": {
+    "title": "SDKs",
+    "description": "SDK documentation for iQ-Studio: customize models, change video sources, and integrate Open WebUI / OGenie.",
+    "current": "sdks/index",
+    "depth": 1,
+    "output": "sdks/index.html"
+  },
+  "benchmarks": {
+    "title": "Benchmarks",
+    "description": "Reproducible performance reports for iQ-Studio across InnoPPE, multi-stream Streampipe, and perception models on QCS9075.",
+    "current": "benchmarks/index",
+    "depth": 1,
+    "output": "benchmarks/index.html"
+  }
+}

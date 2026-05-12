@@ -1,0 +1,301 @@
+/* =========================================================
+   Innodisk Design System — Foundations
+   Colors, type tokens, and semantic vars
+   Source of truth: Innodisk_PPT_Template_CHT_16x9.pptx
+   ========================================================= */
+
+/* ----- Font stacks -------------------------------------------------
+   Brand-spec'd fonts:
+   - Latin display (major) : "ARIAL NARROW BOLD"
+   - Latin body    (minor) : "Segoe UI"
+   - CJK (Traditional)     : "微軟正黑體" (Microsoft JhengHei)
+
+   On the web, neither Arial Narrow Bold nor Segoe UI are reliably
+   available, so Google Fonts substitutes are provided. SUBSTITUTIONS
+   are flagged in README.md — request real licensed files to upgrade.
+
+   Substitutes used:
+   - Arial Narrow Bold  →  Barlow Condensed 700/800 (condensed, sans, bold-weight workhorse)
+   - Segoe UI Regular   →  Inter 400/500           (humanist sans, neutral, very close metrics)
+   - 微軟正黑體 (PingFang/MS JhengHei) → Noto Sans TC (open Traditional Chinese, w400/500/700)
+-------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+:root {
+  /* ===== BRAND COLORS (from theme1.xml clrScheme "Innodisk Color") =====
+     Primary brand red appears two ways: EC1B23 (theme dk2) and EB1B22
+     (used in slide rectangles). Treat EC1B23 as the canonical value;
+     EB1B22 is documented as a legacy variant.                          */
+  --innodisk-red:        #EC1B23;   /* THE Innodisk red — logo + bars */
+  --innodisk-red-legacy: #EB1B22;   /* legacy variant seen in slides  */
+  --innodisk-red-deep:   #C8141B;   /* hover / pressed                */
+  --innodisk-red-tint:   #FDE3E5;   /* light wash for callouts        */
+
+  --innodisk-ink:        #16272E;   /* dark navy/charcoal — slide bg  */
+  --innodisk-ink-2:      #1F3640;   /* slightly lighter ink           */
+  --innodisk-ink-3:      #2E4855;   /* card on dark                   */
+
+  --innodisk-white:      #FFFFFF;
+  --innodisk-paper:      #F6F7F8;   /* off-white surface              */
+  --innodisk-paper-2:    #EDEFF1;
+  --innodisk-line:       #D6DADC;   /* hairline / dividers            */
+  --innodisk-line-2:     #B4BBBE;
+
+  /* ----- Theme accents (clrScheme accents 1–6) ----- */
+  --accent-orange:  #FF6900;
+  --accent-magenta: #BE0078;
+  --accent-green:   #007800;
+  --accent-sky:     #00B4FF;
+  --accent-gold:    #FABE23;
+  --accent-fuchsia: #FF00FF;
+
+  /* Theme lt2 — link blue */
+  --link-blue:      #0046FF;
+  --link-blue-hover:#0563C1;
+
+  /* ===== SEMANTIC SURFACE / TEXT (LIGHT MODE) ===== */
+  --bg:             var(--innodisk-white);
+  --bg-muted:       var(--innodisk-paper);
+  --bg-strong:      var(--innodisk-ink);
+
+  --fg-1:           var(--innodisk-ink);     /* primary text  */
+  --fg-2:           #45565F;                  /* secondary    */
+  --fg-3:           #6E7B82;                  /* tertiary     */
+  --fg-inv:         var(--innodisk-white);
+  --fg-accent:      var(--innodisk-red);
+
+  --border:         var(--innodisk-line);
+  --border-strong:  var(--innodisk-line-2);
+
+  /* ===== STATUS ===== */
+  --success: var(--accent-green);
+  --warning: var(--accent-gold);
+  --danger:  var(--innodisk-red);
+  --info:    var(--accent-sky);
+
+  /* ===== TYPE — RAW STACKS ===== */
+  --font-display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue Condensed",
+                  "Noto Sans TC", "PingFang TC", "微軟正黑體",
+                  "Microsoft JhengHei", system-ui, sans-serif;
+  --font-body:    "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont,
+                  "Noto Sans TC", "PingFang TC", "微軟正黑體",
+                  "Microsoft JhengHei", system-ui, sans-serif;
+  --font-cjk:     "Noto Sans TC", "PingFang TC", "微軟正黑體",
+                  "Microsoft JhengHei", sans-serif;
+  --font-mono:    "JetBrains Mono", "Cascadia Mono", "SF Mono",
+                  ui-monospace, Menlo, Consolas, monospace;
+
+  /* ===== TYPE SCALE (modular, 1.25 → bumped at display end) =====
+     Tuned to the source deck where titles sit at 36–60pt and body
+     at 14–18pt on a 1280×720 frame.                                */
+  --fs-xs:   12px;
+  --fs-sm:   14px;
+  --fs-md:   16px;
+  --fs-lg:   18px;
+  --fs-xl:   22px;
+  --fs-2xl:  28px;
+  --fs-3xl:  36px;
+  --fs-4xl:  48px;
+  --fs-5xl:  64px;
+  --fs-6xl:  84px;
+  --fs-7xl:  108px;
+
+  --lh-tight:  1.05;
+  --lh-snug:   1.2;
+  --lh-normal: 1.45;
+  --lh-loose:  1.7;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:    0.04em;
+  --tracking-wider:   0.12em;   /* eyebrow / english-tag labels   */
+
+  /* ===== SPACING (4px base) ===== */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ===== RADII =====
+     The brand is angular — most surfaces are square. Reserve any
+     rounding for chips/inputs only.                                */
+  --radius-0:    0px;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-pill: 999px;
+
+  /* ===== ELEVATION =====
+     Cards in the source are flat with hairline borders rather than
+     drop shadows. Shadows kept subtle.                              */
+  --shadow-sm:  0 1px 2px rgba(22,39,46,0.06);
+  --shadow-md:  0 4px 12px rgba(22,39,46,0.08), 0 1px 2px rgba(22,39,46,0.06);
+  --shadow-lg:  0 12px 32px rgba(22,39,46,0.10), 0 2px 6px rgba(22,39,46,0.06);
+  --shadow-inset: inset 0 0 0 1px rgba(22,39,46,0.08);
+
+  /* ===== KEYLINE / ACCENT BARS =====
+     The signature element: a 4–10px red bar that anchors titles. */
+  --rule-thin:  2px;
+  --rule:       4px;
+  --rule-bold:  10px;
+
+  /* ===== MOTION ===== */
+  --ease-out:    cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.7, 0, 0.3, 1);
+  --dur-fast:    140ms;
+  --dur-base:    220ms;
+  --dur-slow:    420ms;
+}
+
+/* ===== SEMANTIC TYPE — apply via class or selector ===== */
+
+/* Eyebrow / English category tag, e.g. "BUSINESS COVERAGE /" */
+.t-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+/* Display (Chinese/large titles, like 邁向淨零排放 or 嚴謹的生產製造流程) */
+h1, .t-h1, .t-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-5xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h2, .t-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-4xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h3, .t-h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h4, .t-h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h5, .t-h5 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h6, .t-h6, .t-overline {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-md);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--fg-2);
+  margin: 0;
+}
+
+p, .t-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-md);
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.t-lead {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+}
+
+.t-small, small {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+}
+
+.t-caption {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-normal);
+  color: var(--fg-3);
+  letter-spacing: var(--tracking-wide);
+}
+
+code, kbd, samp, .t-mono {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+}
+
+/* Bilingual title pattern — "邊緣 AI 解決方案 / EDGE AI SOLUTIONS"
+   Chinese is set in body weight, English in display caps. */
+.t-bilingual {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.t-bilingual .zh {
+  font-family: var(--font-cjk);
+  font-weight: 700;
+  font-size: var(--fs-3xl);
+}
+.t-bilingual .en {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-2xl);
+  letter-spacing: var(--tracking-wide);
+  color: var(--fg-2);
+}
+
+/* Red accent rule — under or beside titles */
+.t-rule-red {
+  display: inline-block;
+  width: 56px;
+  height: var(--rule);
+  background: var(--innodisk-red);
+  vertical-align: middle;
+  margin-block: var(--space-3);
+}
+.t-rule-red--bold { height: var(--rule-bold); width: 96px; }
+
+/* CJK helper — apply when text is primarily Traditional Chinese */
+.t-cjk { font-family: var(--font-cjk); }

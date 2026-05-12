@@ -1,0 +1,199 @@
+# site_map.yml — drives tools/build_site.py
+#
+# Each entry generates one site/<output>.html from <source> README via build_site.py.
+# Landing pages (entries with no `source`) are hand-authored under site/<output> and
+# only appear here to provide breadcrumb/pager context for adjacent tutorial pages.
+#
+# Linear `order` is the prev/next reading sequence. Categories give human group
+# names for breadcrumbs. `current` matches the data-page used by the sidebar HTML
+# so the active link gets highlighted.
+
+pages:
+
+  # ---------- Starting Guides ----------
+  - output: starting-guides/q911.html
+    source: tutorials/starting-guides/q911/README.md
+    fig_dir: tutorials/starting-guides/q911/fig
+    title: "Q911 Quick Start Guide"
+    description: "Power on the EXMP-Q911 for the first time — debug port, cabling, ADB / SSH, and a first boot."
+    current: starting-guides/q911
+    category: Starting Guides
+    category_url: ../starting-guides/index.html
+
+  - output: starting-guides/flash-image.html
+    source: tutorials/starting-guides/flash-image/README.md
+    fig_dir: tutorials/starting-guides/flash-image/fig
+    title: "Q911 Image Flashing Guide"
+    description: "Re-flash the system image on the EXMP-Q911."
+    current: starting-guides/flash-image
+    category: Starting Guides
+    category_url: ../starting-guides/index.html
+
+  - output: starting-guides/ota.html
+    source: tutorials/starting-guides/ota/README.md
+    fig_dir: tutorials/starting-guides/ota/fig
+    title: "Qualcomm OTA Guide"
+    description: "Update firmware or the OS image on an already-deployed device over the air."
+    current: starting-guides/ota
+    category: Starting Guides
+    category_url: ../starting-guides/index.html
+
+  # ---------- Applications ----------
+  - output: applications/iqs-vlm.html
+    source: tutorials/applications/iqs-vlm/README.md
+    fig_dir: tutorials/applications/iqs-vlm/fig
+    title: "iQS-VLM"
+    description: "Live vision-language model demo on a UVC camera feed."
+    current: applications/iqs-vlm
+    category: Applications
+    category_url: ../applications/index.html
+
+  - output: applications/iqs-streampipe.html
+    source: tutorials/applications/iqs-streampipe/README.md
+    fig_dir: tutorials/applications/iqs-streampipe/fig
+    title: "iQS-Streampipe"
+    description: "Multi-stream inference pipeline demo."
+    current: applications/iqs-streampipe
+    category: Applications
+    category_url: ../applications/index.html
+
+  - output: applications/iqs-yolov10n.html
+    source: tutorials/applications/iqs-yolov10n/README.md
+    fig_dir: tutorials/applications/iqs-yolov10n/fig
+    title: "iQS-YOLOv10n INT8 Inference"
+    description: "YOLOv10n INT8 inference on GPU and NPU."
+    current: applications/iqs-yolov10n
+    category: Applications
+    category_url: ../applications/index.html
+
+  # ---------- AVL ----------
+  - output: avl/gmsl-camera.html
+    source: tutorials/avl/gmsl-camera/README.md
+    fig_dir: tutorials/avl/gmsl-camera/fig
+    title: "GMSL Cameras"
+    description: "Multi-channel GMSL2 camera bring-up, including the 8-channel octuple demo."
+    current: avl/gmsl-camera
+    category: Approved Vendor List
+    category_url: ../avl/index.html
+
+  - output: avl/mipi-camera.html
+    source: tutorials/avl/mipi-camera/README.md
+    fig_dir: tutorials/avl/mipi-camera/fig
+    title: "MIPI CSI-2 Cameras"
+    description: "MIPI CSI-2 camera integration on EXMP-Q911 and the iQ-9075 EVK."
+    current: avl/mipi-camera
+    category: Approved Vendor List
+    category_url: ../avl/index.html
+
+  # ---------- Model Deploy ----------
+  - output: model-deploy/yolo26.html
+    source: tutorials/model-deploy/cv/yolo26/README.md
+    fig_dir: tutorials/model-deploy/cv/yolo26/fig
+    title: "Model Deploy: YOLO26"
+    description: "Convert, optimize, and run YOLO26 models on the target platform."
+    current: model-deploy/yolo26
+    category: Model Deploy
+    category_url: ../model-deploy/index.html
+
+  # ---------- SDKs ----------
+  - output: sdks/iqs-vlm.html
+    source: tutorials/sdks/iqs-vlm/README.md
+    fig_dir: tutorials/sdks/iqs-vlm/fig
+    title: "iQS-VLM SDK"
+    description: "Interact with the OGenie server through Open WebUI."
+    current: sdks/iqs-vlm
+    category: SDKs
+    category_url: ../sdks/index.html
+
+  - output: sdks/iqs-streampipe.html
+    source: tutorials/sdks/iqs-streampipe/README.md
+    fig_dir: tutorials/sdks/iqs-streampipe/fig
+    title: "iQS-Streampipe SDK"
+    description: "Change the model and the video source feeding the Streampipe pipeline."
+    current: sdks/iqs-streampipe
+    category: SDKs
+    category_url: ../sdks/index.html
+
+  - output: sdks/iqs-ogenie.html
+    source: tutorials/sdks/iqs-ogenie/README.md
+    fig_dir: tutorials/sdks/iqs-ogenie/fig
+    title: "iQS-OGenie SDK"
+    description: "Run your own demo through the OGenie server."
+    current: sdks/iqs-ogenie
+    category: SDKs
+    category_url: ../sdks/index.html
+
+  # ---------- Benchmarks ----------
+  - output: benchmarks/innoppe.html
+    source: benchmarks/innoppe/README.md
+    fig_dir: benchmarks/innoppe/fig
+    title: "InnoPPE Benchmark"
+    description: "Multi-stream YOLO inference benchmark under InnoPPE workloads."
+    current: benchmarks/innoppe
+    category: Benchmarks
+    category_url: ../benchmarks/index.html
+
+  - output: benchmarks/streampipe.html
+    source: benchmarks/iqs-streampipe/README.md
+    fig_dir: benchmarks/iqs-streampipe/fig
+    title: "iQS-Streampipe Benchmark"
+    description: "Multi-stream generic inference pipeline scaling."
+    current: benchmarks/streampipe
+    category: Benchmarks
+    category_url: ../benchmarks/index.html
+
+  - output: benchmarks/perception-model.html
+    source: benchmarks/perception_model/README.md
+    fig_dir: benchmarks/perception_model/fig
+    title: "Perception Model Benchmark"
+    description: "Computer vision perception model performance suite."
+    current: benchmarks/perception-model
+    category: Benchmarks
+    category_url: ../benchmarks/index.html
+
+  # ---------- Reference ----------
+  - output: reference/launcher.html
+    source: docs/how-to-use-iqs-launcher.md
+    fig_dir: docs/fig
+    title: "iqs-launcher Reference"
+    description: "How iqs-launcher works: online vs. offline modes, pre-staging packages for air-gapped platforms."
+    current: reference/launcher
+    category: Reference
+    category_url: ../index.html
+
+  - output: reference/changelog.html
+    source: docs/changelog.md
+    fig_dir: docs/fig
+    title: "Changelog"
+    description: "iQ-Studio version history."
+    current: reference/changelog
+    category: Reference
+    category_url: ../index.html
+
+# Linear reading order for prev/next pagers — used by tutorial pages AND referenced
+# by the hand-authored landings (the pagers there are hardcoded but should match this).
+order:
+  - { path: index.html,                          title: "Overview" }
+  - { path: starting-guides/index.html,          title: "Starting Guides" }
+  - { path: starting-guides/q911.html,           title: "Q911 Quick Start" }
+  - { path: starting-guides/flash-image.html,    title: "Image Flashing" }
+  - { path: starting-guides/ota.html,            title: "Qualcomm OTA" }
+  - { path: applications/index.html,             title: "Applications" }
+  - { path: applications/iqs-vlm.html,           title: "iQS-VLM" }
+  - { path: applications/iqs-streampipe.html,    title: "iQS-Streampipe" }
+  - { path: applications/iqs-yolov10n.html,      title: "iQS-YOLOv10n" }
+  - { path: avl/index.html,                      title: "Approved Vendor List" }
+  - { path: avl/gmsl-camera.html,                title: "GMSL Cameras" }
+  - { path: avl/mipi-camera.html,                title: "MIPI CSI-2 Cameras" }
+  - { path: model-deploy/index.html,             title: "Model Deploy" }
+  - { path: model-deploy/yolo26.html,            title: "YOLO26" }
+  - { path: sdks/index.html,                     title: "SDKs" }
+  - { path: sdks/iqs-vlm.html,                   title: "iQS-VLM SDK" }
+  - { path: sdks/iqs-streampipe.html,            title: "iQS-Streampipe SDK" }
+  - { path: sdks/iqs-ogenie.html,                title: "iQS-OGenie SDK" }
+  - { path: benchmarks/index.html,               title: "Benchmarks" }
+  - { path: benchmarks/innoppe.html,             title: "InnoPPE Benchmark" }
+  - { path: benchmarks/streampipe.html,          title: "iQS-Streampipe Benchmark" }
+  - { path: benchmarks/perception-model.html,    title: "Perception Model Benchmark" }
+  - { path: reference/launcher.html,             title: "iqs-launcher Reference" }
+  - { path: reference/changelog.html,            title: "Changelog" }

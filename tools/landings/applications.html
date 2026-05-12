@@ -1,0 +1,66 @@
+    <nav class="crumbs">
+      <a href="../index.html">Docs</a>
+      <span class="sep">/</span>
+      <span class="current">Applications</span>
+    </nav>
+
+    <div class="page-title">
+      <div class="page-title__eyebrow">Applications <span class="slash">/</span> Run a demo</div>
+      <h1>Applications</h1>
+      <div class="page-title__rule"></div>
+      <p class="page-title__lede">The fastest path from a booted device to a visible inference result — pick a demo, run one command, see it on screen. To customize a demo, see <a href="../sdks/index.html">SDKs</a>. To deploy your own trained model, see <a href="../model-deploy/index.html">Model Deploy</a>.</p>
+    </div>
+
+    <h2 id="demos">Demos</h2>
+
+    <div class="applist">
+      <a class="applist__row" href="iqs-vlm.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+        <div>
+          <div class="applist__title">iQS-VLM</div>
+          <span class="applist__desc">Vision-language model: live captions and Q&amp;A on a UVC camera feed via the OGenie API.</span>
+        </div>
+        <span class="applist__tag">iqs-vlm-demo</span>
+        <svg class="applist__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a class="applist__row" href="iqs-streampipe.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <div>
+          <div class="applist__title">iQS-Streampipe</div>
+          <span class="applist__desc">Multi-stream inference pipeline: run object detection across multiple concurrent video sources.</span>
+        </div>
+        <span class="applist__tag">iqs-streampipe</span>
+        <svg class="applist__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+      <a class="applist__row" href="iqs-yolov10n.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+        <div>
+          <div class="applist__title">iQS-YOLOv10n</div>
+          <span class="applist__desc">YOLOv10n INT8 inference on GPU and NPU — a baseline for hardware acceleration comparison.</span>
+        </div>
+        <span class="applist__tag">iqs-yolov10n</span>
+        <svg class="applist__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <h2 id="launch">Launch commands</h2>
+    <p>Every application is launched through <code>iqs-launcher</code>. The two-command pattern below brings up the OGenie server first, then the VLM demo client.</p>
+
+    <div class="codeblock">
+      <div class="codeblock__head"><span>bash · vlm pair</span><button class="codeblock__copy" type="button">Copy</button></div>
+      <pre><code>iqs-launcher --autotag iqs-ogenie
+iqs-launcher --autotag iqs-vlm-demo</code></pre>
+    </div>
+
+    <p>For details on online vs. offline modes and air-gapped staging, see the <a href="../reference/launcher.html">iqs-launcher Reference</a>.</p>
+
+    <div class="pager">
+      <a class="pager__prev" href="../starting-guides/index.html">
+        <span class="dir">← Previous</span>
+        <span class="title">Starting Guides</span>
+      </a>
+      <a class="pager__next" href="iqs-vlm.html">
+        <span class="dir">Next →</span>
+        <span class="title">iQS-VLM</span>
+      </a>
+    </div>

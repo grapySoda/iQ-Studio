@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iQ-Studio · Edge AI Toolkit for Qualcomm Dragonwing</title>
+<meta name="description" content="iQ-Studio is Innodisk's curated toolkit for running real-time AI workloads on edge platforms. Boot, flash, and run a working demo with a single command — then customize, benchmark, and deploy your own model.">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23EC1B23'/><path d='M9 9h3v14H9zm6 0h3v14h-3zm6 0h3v14h-3z' fill='white'/></svg>">
+</head>
+<body data-current="overview">
+
+<header class="topbar">
+  <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle navigation" type="button">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+  <a href="index.html" class="topbar__brand" aria-label="iQ-Studio home">
+    <img src="assets/img/logo-innodisk.png" alt="Innodisk" />
+    <span class="slash">/</span>
+    <span class="product">iQ-Studio</span>
+    <span class="topbar__version">v0.0.7</span>
+  </a>
+  <span class="topbar__divider"></span>
+  <nav class="topbar__nav" aria-label="Primary">
+    <a href="index.html" class="is-active">Documentation</a>
+    <a href="benchmarks/index.html">Benchmarks</a>
+    <a href="reference/changelog.html">Changelog</a>
+    <a href="https://github.com/InnoIPA/iQ-Studio" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+  <div class="topbar__spacer"></div>
+  <label class="search" aria-label="Search documentation">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input type="text" placeholder="Search docs" disabled title="Search coming soon" />
+    <span class="kbd">⌘ K</span>
+  </label>
+  <a class="icon-btn" href="https://github.com/InnoIPA/iQ-Studio" target="_blank" rel="noopener" title="GitHub repository" aria-label="GitHub">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.6 5.6.6 12c0 5 3.3 9.3 7.9 10.8.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.9 7.9-10.8C23.4 5.6 18.3.5 12 .5Z"/></svg>
+  </a>
+</header>
+
+<div class="notice">
+  <span class="dot"></span>
+  <span>You are viewing the latest documentation for <strong>iQ-Studio v0.0.7</strong> on Qualcomm Dragonwing QCS9075.</span>
+  <span style="margin-left:auto">MIT License · <a href="https://github.com/InnoIPA/iQ-Studio" target="_blank" rel="noopener">GitHub →</a></span>
+</div>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__title">Documentation</div>
+
+    <a href="index.html" class="nav-leaf is-active" data-page="overview">Overview</a>
+
+    <div class="nav-group" data-group>
+      <button class="nav-group__toggle" type="button">
+        <svg class="nav-group__chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 2 4 4-4 4"/></svg>
+        <svg class="nav-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12 12 5l7 7"/><path d="M5 19h14"/></svg>
+        <span>Starting Guides</span>
+      </button>
+      <ul class="nav-list">
+        <li><a href="starting-guides/index.html" data-page="starting-guides/index">Overview</a></li>
+        <li><a href="starting-guides/q911.html" data-page="starting-guides/q911">Q911 Quick Start</a></li>
+        <li><a href="starting-guides/flash-image.html" data-page="starting-guides/flash-image">Image Flashing</a></li>
+        <li><a href="starting-guides/ota.html" data-page="starting-guides/ota">Qualcomm OTA</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group" data-group>
+      <button class="nav-group__toggle" type="button">
+        <svg class="nav-group__chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 2 4 4-4 4"/></svg>
+        <svg class="nav-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <span>Applications</span>
+      </button>
+      <ul class="nav-list">
+        <li><a href="applications/index.html" data-page="applications/index">Overview</a></li>
+        <li><a href="applications/iqs-vlm.html" data-page="applications/iqs-vlm">iQS-VLM</a></li>
+        <li><a href="applications/iqs-streampipe.html" data-page="applications/iqs-streampipe">iQS-Streampipe</a></li>
+        <li><a href="applications/iqs-yolov10n.html" data-page="applications/iqs-yolov10n">iQS-YOLOv10n</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group" data-group>
+      <button class="nav-group__toggle" type="button">
+        <svg class="nav-group__chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 2 4 4-4 4"/></svg>
+        <svg class="nav-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg>
+        <span>Approved Vendor List</span>
+      </button>
+      <ul class="nav-list">
+        <li><a href="avl/index.html" data-page="avl/index">Overview</a></li>
+        <li><a href="avl/gmsl-camera.html" data-page="avl/gmsl-camera">GMSL Cameras</a></li>
+        <li><a href="avl/mipi-camera.html" data-page="avl/mipi-camera">MIPI CSI-2 Cameras</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group" data-group>
+      <button class="nav-group__toggle" type="button">
+        <svg class="nav-group__chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 2 4 4-4 4"/></svg>
+        <svg class="nav-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="m7 14 3-3 4 4 5-5"/></svg>
+        <span>Model Deploy</span>
+      </button>
+      <ul class="nav-list">
+        <li><a href="model-deploy/index.html" data-page="model-deploy/index">Overview</a></li>
+        <li><a href="model-deploy/yolo26.html" data-page="model-deploy/yolo26">YOLO26 (CV)</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group" data-group>
+      <button class="nav-group__toggle" type="button">
+        <svg class="nav-group__chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 2 4 4-4 4"/></svg>
+        <svg class="nav-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14 4-4 16"/></svg>
+        <span>SDKs</span>
+      </button>
+      <ul class="nav-list">
+        <li><a href="sdks/index.html" data-page="sdks/index">Overview</a></li>
+        <li><a href="sdks/iqs-vlm.html" data-page="sdks/iqs-vlm">iQS-VLM SDK</a></li>
+        <li><a href="sdks/iqs-streampipe.html" data-page="sdks/iqs-streampipe">iQS-Streampipe SDK</a></li>
+        <li><a href="sdks/iqs-ogenie.html" data-page="sdks/iqs-ogenie">iQS-OGenie SDK</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group" data-group>
+      <button class="nav-group__toggle" type="button">
+        <svg class="nav-group__chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 2 4 4-4 4"/></svg>
+        <svg class="nav-group__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12h-4l-3 9-6-18-3 9H1"/></svg>
+        <span>Benchmarks</span>
+      </button>
+      <ul class="nav-list">
+        <li><a href="benchmarks/index.html" data-page="benchmarks/index">Overview</a></li>
+        <li><a href="benchmarks/innoppe.html" data-page="benchmarks/innoppe">InnoPPE</a></li>
+        <li><a href="benchmarks/streampipe.html" data-page="benchmarks/streampipe">iQS-Streampipe</a></li>
+        <li><a href="benchmarks/perception-model.html" data-page="benchmarks/perception-model">Perception Model</a></li>
+      </ul>
+    </div>
+
+    <a href="reference/launcher.html" class="nav-leaf" data-page="reference/launcher">iqs-launcher Reference</a>
+    <a href="reference/changelog.html" class="nav-leaf" data-page="reference/changelog">Changelog</a>
+    <a href="https://github.com/InnoIPA/iQ-Studio/blob/main/LICENSE" class="nav-leaf" target="_blank" rel="noopener">License</a>
+
+    <div class="sidebar__foot">
+      <div class="row">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.6 5.6.6 12c0 5 3.3 9.3 7.9 10.8.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.9 7.9-10.8C23.4 5.6 18.3.5 12 .5Z"/></svg>
+        <a href="https://github.com/InnoIPA/iQ-Studio" target="_blank" rel="noopener">InnoIPA / iQ-Studio</a>
+      </div>
+      <div class="row">© 2025 Innodisk Corp.</div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <div class="hero">
+      <div class="hero__inner">
+        <div class="hero__eyebrow">
+          Edge AI Toolkit <span class="slash">/</span> Qualcomm Dragonwing QCS9075
+        </div>
+        <h1>Show Performance.<br><span class="accent">Spark Imagination.</span></h1>
+        <div class="hero__rule"></div>
+        <p class="hero__lede">
+          iQ-Studio is Innodisk's curated toolkit for running real-time AI workloads on edge platforms.
+          Boot, flash, and run a working demo with a single command — then customize, benchmark, and
+          deploy your own model.
+        </p>
+        <div class="hero__actions">
+          <a href="starting-guides/index.html" class="btn btn--primary">Quick Start →</a>
+          <a href="https://github.com/InnoIPA/iQ-Studio" target="_blank" rel="noopener" class="btn btn--ghost">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="crumbs">
+      <span class="current">Overview</span>
+    </nav>
+
+    <div class="page-title">
+      <div class="page-title__eyebrow">Overview <span class="slash">/</span> What is iQ-Studio</div>
+      <h1>An Edge-AI Sandbox for Qualcomm Dragonwing</h1>
+      <div class="page-title__rule"></div>
+      <p class="page-title__lede">
+        A reproducible, BSP-aware launcher and a growing catalogue of vision &amp; language demos —
+        designed to take you from a powered-on device to a visible inference result in a single command.
+      </p>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat__label">Supported Platform</div>
+        <div class="stat__value">QCS9075<span class="unit">Dragonwing</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat__label">Application Demos</div>
+        <div class="stat__value">3<span class="unit">shipped</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat__label">Tutorial Pages</div>
+        <div class="stat__value">17<span class="unit">guides</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat__label">License</div>
+        <div class="stat__value">MIT<span class="unit">open source</span></div>
+      </div>
+    </div>
+
+    <h2 id="pick-your-path">Pick Your Path</h2>
+    <p>Three common starting points. Pick the one that matches your goal today; you can always come back for another.</p>
+
+    <div class="personas">
+      <a class="persona" href="applications/index.html">
+        <div class="persona__role">FAEs &amp; Evaluators</div>
+        <div class="persona__title">🚀 Run a demo</div>
+        <p class="persona__desc">See an AI inference demo running on the hardware in under ten minutes. Skim Applications, then run the launcher.</p>
+        <span class="persona__cta">Applications →</span>
+      </a>
+      <a class="persona" href="sdks/index.html">
+        <div class="persona__role">Developers &amp; ML Engineers</div>
+        <div class="persona__title">🛠 Develop &amp; customize</div>
+        <p class="persona__desc">Swap models, change inputs, or deploy your own trained model through the SDKs or the Model Deploy flow.</p>
+        <span class="persona__cta">SDKs →</span>
+      </a>
+      <a class="persona" href="benchmarks/index.html">
+        <div class="persona__role">PMs &amp; Integrators</div>
+        <div class="persona__title">📊 Evaluate the platform</div>
+        <p class="persona__desc">Review measured performance on real workloads — multi-stream YOLO, CV models, perception — and how iQ-Studio fits the stack.</p>
+        <span class="persona__cta">Benchmarks →</span>
+      </a>
+    </div>
+
+    <h2 id="30-second-demo">30-Second Demo</h2>
+    <p>If iQ-Studio is already installed, two commands are enough to see a vision-language model running on a live UVC camera feed.</p>
+
+    <div class="codeblock">
+      <div class="codeblock__head"><span>bash · ogenie server</span><button class="codeblock__copy" type="button">Copy</button></div>
+      <pre><code>iqs-launcher --autotag iqs-ogenie</code></pre>
+    </div>
+
+    <div class="codeblock">
+      <div class="codeblock__head"><span>bash · vlm demo</span><button class="codeblock__copy" type="button">Copy</button></div>
+      <pre><code>iqs-launcher --autotag iqs-vlm-demo</code></pre>
+    </div>
+
+    <div class="diagram">
+      <img src="assets/img/vlm-demo.gif" alt="VLM demo running on iQ-Studio">
+    </div>
+    <div class="diagram-caption">Live VLM predictions overlaid on a UVC camera feed</div>
+
+    <p>For other applications and the launch commands behind them, see <a href="applications/index.html">Applications</a>.</p>
+
+    <h2 id="explore">Explore Documentation &amp; Resources</h2>
+    <p>iQ-Studio resources are grouped into categories based on functionality. Most users start with <strong>Starting Guides</strong> to bring the platform up, run an <strong>Application</strong> to see a demo, then customize through an <strong>SDK</strong>.</p>
+
+    <div class="cards">
+      <a href="starting-guides/index.html" class="card">
+        <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12 12 5l7 7"/><path d="M12 19V5"/></svg>
+        <div class="card__title">Starting Guides</div>
+        <p class="card__desc">Quick-start guides for hardware, image flashing, and OTA updates.</p>
+        <span class="card__more">Get started →</span>
+      </a>
+      <a href="applications/index.html" class="card">
+        <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <div class="card__title">Applications</div>
+        <p class="card__desc">Pre-built demos: VLM, multi-stream Streampipe, YOLOv10n inference.</p>
+        <span class="card__more">See demos →</span>
+      </a>
+      <a href="sdks/index.html" class="card">
+        <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14 4-4 16"/></svg>
+        <div class="card__title">SDKs</div>
+        <p class="card__desc">Customize models, video sources, and integrate Open WebUI / OGenie.</p>
+        <span class="card__more">Build with SDKs →</span>
+      </a>
+      <a href="avl/index.html" class="card">
+        <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg>
+        <div class="card__title">Approved Vendor List</div>
+        <p class="card__desc">Validated GMSL and MIPI CSI-2 cameras with driver setup guides.</p>
+        <span class="card__more">View AVL →</span>
+      </a>
+      <a href="model-deploy/index.html" class="card">
+        <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="m7 14 3-3 4 4 5-5"/></svg>
+        <div class="card__title">Model Deploy</div>
+        <p class="card__desc">Convert, quantize, validate, and deploy your trained models to the target.</p>
+        <span class="card__more">Deploy a model →</span>
+      </a>
+      <a href="benchmarks/index.html" class="card">
+        <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12h-4l-3 9-6-18-3 9H1"/></svg>
+        <div class="card__title">Benchmarks</div>
+        <p class="card__desc">Reproducible performance reports across InnoPPE, Streampipe, and perception models.</p>
+        <span class="card__more">View numbers →</span>
+      </a>
+    </div>
+
+    <h2 id="install">Install</h2>
+    <p>Clone the repo and run the installer. After installation on Ubuntu, log in again so your shell picks up the launcher.</p>
+
+    <div class="codeblock">
+      <div class="codeblock__head"><span>bash · install</span><button class="codeblock__copy" type="button">Copy</button></div>
+      <pre><code>git clone https://github.com/InnoIPA/iQ-Studio.git
+cd iQ-Studio
+./install.sh</code></pre>
+    </div>
+
+    <div class="callout callout--note">
+      <div class="callout__icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><circle cx="12" cy="16" r="0.5" fill="currentColor"/></svg>
+      </div>
+      <div class="callout__body">
+        <strong>Note</strong>
+        <p>iQ-Studio targets Innodisk products built on the <a href="https://www.innodisk.com/en/news/innodisk-unveils-ai-on-dragonwing-computing-series" target="_blank" rel="noopener">Qualcomm Dragonwing SoC</a>. For Q911 first-time setup, head to the <a href="starting-guides/q911.html">Q911 Quick Start</a>.</p>
+      </div>
+    </div>
+
+    <h2 id="architecture">Core Software Stack &amp; Architecture</h2>
+    <p>iQ-Studio is built upon a robust edge AI software stack, bridging the gap between hardware and high-level applications.</p>
+
+    <div class="diagram">
+      <img src="assets/img/ai_on_dragonwing_sw_stack.png" alt="AI-on-Dragonwing software stack diagram">
+    </div>
+
+    <ul>
+      <li><strong>Hardware &amp; Firmware:</strong> Qualcomm Dragonwing QCS9075 SoC and low-level firmware.</li>
+      <li><strong>Kernel Space:</strong> Powered by <a href="https://www.qualcomm.com/developer/software/qualcomm-linux" target="_blank" rel="noopener">Qualcomm Linux</a>, integrated with Inno DTB / drivers and Yocto environments.</li>
+      <li><strong>User Space:</strong> Supports 3rd-party LLM SDKs, device management (iCAP), and the inno AVL. At the top sits the <strong>iQS-App layer</strong> (VLM, Streampipe, YOLO, OGenie).</li>
+    </ul>
+
+    <h3 id="qli-version-mapping">Qualcomm Linux (QLI) Version Mapping</h3>
+    <p>Our architecture evolves alongside the <a href="https://www.qualcomm.com/developer/software/qualcomm-linux" target="_blank" rel="noopener">Qualcomm Linux Roadmap</a>, aligning with the latest kernel and Yocto Project releases.</p>
+
+    <table>
+      <thead>
+        <tr><th>Linux Kernel</th><th>Yocto Project</th><th>QLI Release</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>6.6 LTS</strong></td><td>4.0 Kirkstone</td><td>QLI 1.x</td></tr>
+        <tr><td><strong>6.6 LTS</strong></td><td>5.0 Scarthgap</td><td>QLI 1.x</td></tr>
+        <tr><td><strong>6.18 LTS</strong></td><td>Wrynose (Master)</td><td>QLI 2.x</td></tr>
+      </tbody>
+    </table>
+
+    <div class="diagram">
+      <img src="assets/img/qcl_roadmap.png" alt="Qualcomm Linux release roadmap">
+    </div>
+
+    <p>Our BSP foundation is published through <a href="https://github.com/InnoIPA/meta-iQ__manifest" target="_blank" rel="noopener">InnoIPA/meta-iQ__manifest</a>, providing a reproducible Qualcomm Yocto-based system base for EXMP-Q911 and the QCS9075 iQ-9075 EVK.</p>
+
+    <div class="diagram">
+      <img src="assets/img/sw_development_pipeline.png" alt="Software development pipeline">
+    </div>
+
+    <h2 id="launcher">How to Use iqs-launcher</h2>
+    <p><code>iqs-launcher</code> is the execution entry point for every application in iQ-Studio. It checks the platform BSP version, then pulls (online) or loads (offline) the matching Docker image or IPK package.</p>
+    <p>Both online and offline modes — including pre-staging packages for an air-gapped platform — are covered in the <a href="reference/launcher.html">iqs-launcher Reference</a>.</p>
+
+    <h2 id="related">Related Repositories</h2>
+    <p>iQ-Studio integrates with several sibling repositories. Each owns a specific layer of the platform stack.</p>
+    <ul>
+      <li><a href="https://github.com/InnoIPA/meta-iQ__manifest" target="_blank" rel="noopener">InnoIPA/meta-iQ__manifest</a> — Yocto-based BSP baseline for the platform.</li>
+      <li><a href="https://github.com/InnoIPA/iQ-Cam__manifest" target="_blank" rel="noopener">InnoIPA/iQ-Cam__manifest</a> — Camera driver patches consumed by the AVL tutorials.</li>
+      <li><a href="https://github.com/InnoIPA/iQ-ubuntu" target="_blank" rel="noopener">InnoIPA/iQ-ubuntu</a> — Reference for Innodisk-provided Ubuntu image versions.</li>
+      <li><a href="https://github.com/InnoIPA/iQ-Foundry" target="_blank" rel="noopener">InnoIPA/iQ-Foundry</a> — End-to-end model quantization and on-device validation.</li>
+    </ul>
+
+    <div class="pager">
+      <span class="pager__empty"></span>
+      <a class="pager__next" href="starting-guides/index.html">
+        <span class="dir">Next →</span>
+        <span class="title">Starting Guides</span>
+      </a>
+    </div>
+
+  </main>
+
+  <aside class="toc">
+    <div class="toc__head">On this page</div>
+    <ul id="toc-list"></ul>
+  </aside>
+
+</div>
+
+<footer class="footer">
+  <div>
+    <strong style="color:white;font-family:var(--font-display);letter-spacing:0.04em">INNODISK · iQ-Studio</strong>
+    <div class="footer__legal">© 2025 Innodisk Corp. Released under the MIT License. Service with INNO Spirit.</div>
+  </div>
+  <div class="footer__links">
+    <a href="https://github.com/InnoIPA/iQ-Studio" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.innodisk.com" target="_blank" rel="noopener">innodisk.com</a>
+    <a href="https://github.com/InnoIPA/iQ-Studio/blob/main/LICENSE" target="_blank" rel="noopener">License</a>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
