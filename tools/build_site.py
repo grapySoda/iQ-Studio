@@ -219,6 +219,16 @@ def wrap_codeblocks(html: str) -> str:
     return CODEBLOCK_RE.sub(repl, html)
 
 
+def wrap_tables(html: str) -> str:
+    """Wrap each <table>…</table> in a .table-scroll container so wide tables
+    scroll horizontally within their column instead of expanding the page."""
+    return re.sub(
+        r"(<table\b[\s\S]*?</table>)",
+        r'<div class="table-scroll">\1</div>',
+        html,
+    )
+
+
 def rewrite_links(html: str, source_md: Path, page_dir: Path, fig_slug: str, fig_files_copied: set[str]) -> str:
     """Rewrite relative href/src to site paths. Returns the new html."""
     # Map README→site for the canonical pages so cross-tutorial links work.
@@ -521,6 +531,7 @@ def main() -> None:
         fig_files_copied: set[str] = set()
         body_html = rewrite_links(body_html, source_md, page_dir, fig_slug, fig_files_copied)
         body_html = wrap_codeblocks(body_html)
+        body_html = wrap_tables(body_html)
         body_html = add_external_attrs(body_html)
         body_html = _strip_first_h1(body_html)  # h1 lives in the page-title block
 
