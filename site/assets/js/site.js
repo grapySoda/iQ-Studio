@@ -108,7 +108,11 @@
       const done = () => {
         const orig = btn.textContent;
         btn.textContent = 'Copied!';
-        setTimeout(() => { btn.textContent = orig; }, 1200);
+        btn.classList.add('is-copied');
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.classList.remove('is-copied');
+        }, 1200);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(done).catch(() => {
@@ -128,5 +132,24 @@
     ta.select();
     try { document.execCommand('copy'); } catch (_) {}
     document.body.removeChild(ta);
+  }
+
+  /* ---------- Scroll-triggered reveals (v0.0.8) ---------- */
+  const revealTargets = $$('[data-reveal]');
+  if (revealTargets.length) {
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!('IntersectionObserver' in window) || prefersReduced) {
+      revealTargets.forEach(el => el.classList.add('is-revealed'));
+    } else {
+      const revealIO = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            revealIO.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+      revealTargets.forEach(el => revealIO.observe(el));
+    }
   }
 })();

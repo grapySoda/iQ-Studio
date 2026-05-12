@@ -936,3 +936,134 @@ a:hover { color: var(--innodisk-red-deep); text-decoration: underline; }
   .topbar, .sidebar, .toc, .footer, .notice, .pager, .sidebar-toggle, .sidebar-backdrop { display: none !important; }
   .main { max-width: none; padding: 0; }
 }
+
+/* ============================================
+   v0.0.8 — Small-phone responsiveness
+   Below 480px: hide hero halo, tighten paddings,
+   bump touch targets, drop version pill from topbar.
+   ============================================ */
+@media (max-width: 480px) {
+  .hero::after { display: none; }
+  .hero { padding: 28px 16px 24px; margin: -28px -16px 24px; }
+  .hero h1 { font-size: 30px; }
+  .hero__lede { font-size: 15px; }
+  .main { padding: 20px 16px 48px; }
+  .topbar { padding: 0 14px; gap: 12px; }
+  .topbar__brand { font-size: 14px; }
+  .topbar__version { display: none; }
+  .footer { padding: 18px 16px; font-size: 12px; }
+  .notice { padding: 10px 16px; }
+  .nav-list a, .nav-leaf, .nav-group__toggle { padding-top: 11px; padding-bottom: 11px; }
+}
+
+/* Wide-table scroll wrapper — opt in by wrapping <table> in <div class="table-scroll"> */
+.main .table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 14px 0 22px;
+  border: 1px solid var(--border);
+}
+.main .table-scroll > table {
+  min-width: 480px;
+  margin: 0;
+  border: 0;
+}
+
+/* ============================================
+   v0.0.8 — Motion: hover micro-interactions
+   Subtle, professional. All durations use existing
+   --dur-fast / --ease-out motion tokens.
+   ============================================ */
+
+/* Cards: lift slightly on hover (transform already declared in transition) */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(22, 39, 46, 0.08);
+}
+
+/* Persona cards: same lift, but transform isn't in their transition yet */
+.persona {
+  transition: border-color 160ms var(--ease-out), transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
+.persona:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(22, 39, 46, 0.08);
+}
+
+/* Applist arrow nudge on row hover */
+.applist__arrow { transition: transform 140ms var(--ease-out), color 140ms var(--ease-out); }
+.applist__row:hover .applist__arrow { transform: translateX(3px); color: var(--innodisk-red); }
+
+/* Primary/outline button glow on hover */
+.btn { transition: background 140ms var(--ease-out), border-color 140ms var(--ease-out), color 140ms var(--ease-out), box-shadow 140ms var(--ease-out); }
+.btn--primary:hover, .btn--outline:hover {
+  box-shadow: 0 2px 10px rgba(236, 27, 35, 0.22);
+}
+
+/* Topbar nav underline slide-in on hover (active state keeps its own red border) */
+.topbar__nav a { position: relative; }
+.topbar__nav a::after {
+  content: "";
+  position: absolute;
+  left: 14px; right: 14px; bottom: -1px;
+  height: 2px;
+  background: var(--innodisk-red);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 160ms var(--ease-out);
+  pointer-events: none;
+}
+.topbar__nav a:hover::after { transform: scaleX(1); }
+.topbar__nav a.is-active::after { display: none; }
+
+/* TOC links: nudge slightly right on hover */
+.toc a { transition: color 140ms var(--ease-out), border-color 140ms var(--ease-out), padding-left 140ms var(--ease-out); }
+.toc a:hover { padding-left: 14px; }
+
+/* Code copy button: brief pulse after a successful copy (class toggled in site.js) */
+.codeblock__copy.is-copied {
+  border-color: var(--innodisk-red);
+  color: white;
+  background: rgba(236, 27, 35, 0.18);
+  animation: iqs-copy-pulse 360ms var(--ease-out);
+}
+@keyframes iqs-copy-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(236, 27, 35, 0.55); }
+  100% { box-shadow: 0 0 0 10px rgba(236, 27, 35, 0); }
+}
+
+/* Unified focus-visible ring */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.icon-btn:focus-visible,
+.sidebar-toggle:focus-visible,
+.nav-group__toggle:focus-visible,
+.codeblock__copy:focus-visible,
+.search input:focus-visible {
+  outline: 2px solid var(--innodisk-red);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ============================================
+   v0.0.8 — Motion: scroll-triggered reveals
+   Elements with [data-reveal] fade + slide up when
+   first scrolled into view. The observer (site.js)
+   adds .is-revealed once intersection fires.
+   Wrapped in (no-preference) so reduced-motion users
+   and no-JS users see content immediately.
+   ============================================ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out);
+    will-change: opacity, transform;
+  }
+  [data-reveal].is-revealed { opacity: 1; transform: none; }
+  [data-reveal][data-reveal-delay="1"] { transition-delay: 80ms; }
+  [data-reveal][data-reveal-delay="2"] { transition-delay: 160ms; }
+  [data-reveal][data-reveal-delay="3"] { transition-delay: 240ms; }
+  [data-reveal][data-reveal-delay="4"] { transition-delay: 320ms; }
+}

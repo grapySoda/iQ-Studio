@@ -1,5 +1,24 @@
 # Changelogs
 
+## v0.0.8
+### Feat
+
+- Site motion pass: subtle scroll-triggered reveals on stats, persona cards, application/SDK/benchmark/AVL rows, callouts, diagrams, and section headings across all hand-authored landings
+- Hover micro-interactions on cards, persona cards, applist rows, primary/outline buttons, topbar nav, and TOC links
+- Copy-button success pulse on code blocks
+- Unified `:focus-visible` ring for keyboard navigation
+
+### Fixes
+
+- Mobile responsiveness: hide hero decorative circle below 480px (fixes horizontal scroll on small phones)
+- Wrap the QLI version mapping table in a horizontally scrollable container so it fits narrow viewports
+- Add small-phone breakpoint (<480px): tighter hero/main padding, larger sidebar nav touch targets, version pill hidden to make room for the brand on <360px screens
+
+### Chore
+
+- Bumped version to v0.0.8 in topbar and notice banner across all 8 hand-authored landing pages
+- All new motion respects `prefers-reduced-motion`; no-JS users see content immediately
+
 ## v0.0.7
 ### Feat
 

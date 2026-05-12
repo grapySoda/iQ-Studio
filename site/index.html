@@ -18,7 +18,7 @@
     <img src="assets/img/logo-innodisk.png" alt="Innodisk" />
     <span class="slash">/</span>
     <span class="product">iQ-Studio</span>
-    <span class="topbar__version">v0.0.7</span>
+    <span class="topbar__version">v0.0.8</span>
   </a>
   <span class="topbar__divider"></span>
   <nav class="topbar__nav" aria-label="Primary">
@@ -40,7 +40,7 @@
 
 <div class="notice">
   <span class="dot"></span>
-  <span>You are viewing the latest documentation for <strong>iQ-Studio v0.0.7</strong> on Qualcomm Dragonwing QCS9075.</span>
+  <span>You are viewing the latest documentation for <strong>iQ-Studio v0.0.8</strong> on Qualcomm Dragonwing QCS9075.</span>
   <span style="margin-left:auto">MIT License · <a href="https://github.com/InnoIPA/iQ-Studio" target="_blank" rel="noopener">GitHub →</a></span>
 </div>
 
@@ -180,7 +180,7 @@
       </p>
     </div>
 
-    <div class="stats">
+    <div class="stats" data-reveal>
       <div class="stat">
         <div class="stat__label">Supported Platform</div>
         <div class="stat__value">QCS9075<span class="unit">Dragonwing</span></div>
@@ -199,23 +199,23 @@
       </div>
     </div>
 
-    <h2 id="pick-your-path">Pick Your Path</h2>
+    <h2 id="pick-your-path" data-reveal>Pick Your Path</h2>
     <p>Three common starting points. Pick the one that matches your goal today; you can always come back for another.</p>
 
     <div class="personas">
-      <a class="persona" href="applications/index.html">
+      <a class="persona" href="applications/index.html" data-reveal data-reveal-delay="1">
         <div class="persona__role">FAEs &amp; Evaluators</div>
         <div class="persona__title">🚀 Run a demo</div>
         <p class="persona__desc">See an AI inference demo running on the hardware in under ten minutes. Skim Applications, then run the launcher.</p>
         <span class="persona__cta">Applications →</span>
       </a>
-      <a class="persona" href="sdks/index.html">
+      <a class="persona" href="sdks/index.html" data-reveal data-reveal-delay="2">
         <div class="persona__role">Developers &amp; ML Engineers</div>
         <div class="persona__title">🛠 Develop &amp; customize</div>
         <p class="persona__desc">Swap models, change inputs, or deploy your own trained model through the SDKs or the Model Deploy flow.</p>
         <span class="persona__cta">SDKs →</span>
       </a>
-      <a class="persona" href="benchmarks/index.html">
+      <a class="persona" href="benchmarks/index.html" data-reveal data-reveal-delay="3">
         <div class="persona__role">PMs &amp; Integrators</div>
         <div class="persona__title">📊 Evaluate the platform</div>
         <p class="persona__desc">Review measured performance on real workloads — multi-stream YOLO, CV models, perception — and how iQ-Studio fits the stack.</p>
@@ -223,7 +223,7 @@
       </a>
     </div>
 
-    <h2 id="30-second-demo">30-Second Demo</h2>
+    <h2 id="30-second-demo" data-reveal>30-Second Demo</h2>
     <p>If iQ-Studio is already installed, two commands are enough to see a vision-language model running on a live UVC camera feed.</p>
 
     <div class="codeblock">
@@ -236,48 +236,48 @@
       <pre><code>iqs-launcher --autotag iqs-vlm-demo</code></pre>
     </div>
 
-    <div class="diagram">
+    <div class="diagram" data-reveal>
       <img src="assets/img/vlm-demo.gif" alt="VLM demo running on iQ-Studio">
     </div>
     <div class="diagram-caption">Live VLM predictions overlaid on a UVC camera feed</div>
 
     <p>For other applications and the launch commands behind them, see <a href="applications/index.html">Applications</a>.</p>
 
-    <h2 id="explore">Explore Documentation &amp; Resources</h2>
+    <h2 id="explore" data-reveal>Explore Documentation &amp; Resources</h2>
     <p>iQ-Studio resources are grouped into categories based on functionality. Most users start with <strong>Starting Guides</strong> to bring the platform up, run an <strong>Application</strong> to see a demo, then customize through an <strong>SDK</strong>.</p>
 
     <div class="cards">
-      <a href="starting-guides/index.html" class="card">
+      <a href="starting-guides/index.html" class="card" data-reveal data-reveal-delay="1">
         <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12 12 5l7 7"/><path d="M12 19V5"/></svg>
         <div class="card__title">Starting Guides</div>
         <p class="card__desc">Quick-start guides for hardware, image flashing, and OTA updates.</p>
         <span class="card__more">Get started →</span>
       </a>
-      <a href="applications/index.html" class="card">
+      <a href="applications/index.html" class="card" data-reveal data-reveal-delay="2">
         <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         <div class="card__title">Applications</div>
         <p class="card__desc">Pre-built demos: VLM, multi-stream Streampipe, YOLOv10n inference.</p>
         <span class="card__more">See demos →</span>
       </a>
-      <a href="sdks/index.html" class="card">
+      <a href="sdks/index.html" class="card" data-reveal data-reveal-delay="3">
         <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14 4-4 16"/></svg>
         <div class="card__title">SDKs</div>
         <p class="card__desc">Customize models, video sources, and integrate Open WebUI / OGenie.</p>
         <span class="card__more">Build with SDKs →</span>
       </a>
-      <a href="avl/index.html" class="card">
+      <a href="avl/index.html" class="card" data-reveal data-reveal-delay="4">
         <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg>
         <div class="card__title">Approved Vendor List</div>
         <p class="card__desc">Validated GMSL and MIPI CSI-2 cameras with driver setup guides.</p>
         <span class="card__more">View AVL →</span>
       </a>
-      <a href="model-deploy/index.html" class="card">
+      <a href="model-deploy/index.html" class="card" data-reveal data-reveal-delay="1">
         <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="m7 14 3-3 4 4 5-5"/></svg>
         <div class="card__title">Model Deploy</div>
         <p class="card__desc">Convert, quantize, validate, and deploy your trained models to the target.</p>
         <span class="card__more">Deploy a model →</span>
       </a>
-      <a href="benchmarks/index.html" class="card">
+      <a href="benchmarks/index.html" class="card" data-reveal data-reveal-delay="2">
         <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12h-4l-3 9-6-18-3 9H1"/></svg>
         <div class="card__title">Benchmarks</div>
         <p class="card__desc">Reproducible performance reports across InnoPPE, Streampipe, and perception models.</p>
@@ -285,7 +285,7 @@
       </a>
     </div>
 
-    <h2 id="install">Install</h2>
+    <h2 id="install" data-reveal>Install</h2>
     <p>Clone the repo and run the installer. After installation on Ubuntu, log in again so your shell picks up the launcher.</p>
 
     <div class="codeblock">
@@ -295,7 +295,7 @@ cd iQ-Studio
 ./install.sh</code></pre>
     </div>
 
-    <div class="callout callout--note">
+    <div class="callout callout--note" data-reveal>
       <div class="callout__icon">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><circle cx="12" cy="16" r="0.5" fill="currentColor"/></svg>
       </div>
@@ -305,10 +305,10 @@ cd iQ-Studio
       </div>
     </div>
 
-    <h2 id="architecture">Core Software Stack &amp; Architecture</h2>
+    <h2 id="architecture" data-reveal>Core Software Stack &amp; Architecture</h2>
     <p>iQ-Studio is built upon a robust edge AI software stack, bridging the gap between hardware and high-level applications.</p>
 
-    <div class="diagram">
+    <div class="diagram" data-reveal>
       <img src="assets/img/ai_on_dragonwing_sw_stack.png" alt="AI-on-Dragonwing software stack diagram">
     </div>
 
@@ -321,32 +321,34 @@ cd iQ-Studio
     <h3 id="qli-version-mapping">Qualcomm Linux (QLI) Version Mapping</h3>
     <p>Our architecture evolves alongside the <a href="https://www.qualcomm.com/developer/software/qualcomm-linux" target="_blank" rel="noopener">Qualcomm Linux Roadmap</a>, aligning with the latest kernel and Yocto Project releases.</p>
 
-    <table>
-      <thead>
-        <tr><th>Linux Kernel</th><th>Yocto Project</th><th>QLI Release</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>6.6 LTS</strong></td><td>4.0 Kirkstone</td><td>QLI 1.x</td></tr>
-        <tr><td><strong>6.6 LTS</strong></td><td>5.0 Scarthgap</td><td>QLI 1.x</td></tr>
-        <tr><td><strong>6.18 LTS</strong></td><td>Wrynose (Master)</td><td>QLI 2.x</td></tr>
-      </tbody>
-    </table>
+    <div class="table-scroll" data-reveal>
+      <table>
+        <thead>
+          <tr><th>Linux Kernel</th><th>Yocto Project</th><th>QLI Release</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>6.6 LTS</strong></td><td>4.0 Kirkstone</td><td>QLI 1.x</td></tr>
+          <tr><td><strong>6.6 LTS</strong></td><td>5.0 Scarthgap</td><td>QLI 1.x</td></tr>
+          <tr><td><strong>6.18 LTS</strong></td><td>Wrynose (Master)</td><td>QLI 2.x</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <div class="diagram">
+    <div class="diagram" data-reveal>
       <img src="assets/img/qcl_roadmap.png" alt="Qualcomm Linux release roadmap">
     </div>
 
     <p>Our BSP foundation is published through <a href="https://github.com/InnoIPA/meta-iQ__manifest" target="_blank" rel="noopener">InnoIPA/meta-iQ__manifest</a>, providing a reproducible Qualcomm Yocto-based system base for EXMP-Q911 and the QCS9075 iQ-9075 EVK.</p>
 
-    <div class="diagram">
+    <div class="diagram" data-reveal>
       <img src="assets/img/sw_development_pipeline.png" alt="Software development pipeline">
     </div>
 
-    <h2 id="launcher">How to Use iqs-launcher</h2>
+    <h2 id="launcher" data-reveal>How to Use iqs-launcher</h2>
     <p><code>iqs-launcher</code> is the execution entry point for every application in iQ-Studio. It checks the platform BSP version, then pulls (online) or loads (offline) the matching Docker image or IPK package.</p>
     <p>Both online and offline modes — including pre-staging packages for an air-gapped platform — are covered in the <a href="reference/launcher.html">iqs-launcher Reference</a>.</p>
 
-    <h2 id="related">Related Repositories</h2>
+    <h2 id="related" data-reveal>Related Repositories</h2>
     <p>iQ-Studio integrates with several sibling repositories. Each owns a specific layer of the platform stack.</p>
     <ul>
       <li><a href="https://github.com/InnoIPA/meta-iQ__manifest" target="_blank" rel="noopener">InnoIPA/meta-iQ__manifest</a> — Yocto-based BSP baseline for the platform.</li>

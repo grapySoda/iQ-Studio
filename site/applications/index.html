@@ -18,7 +18,7 @@
     <img src="../assets/img/logo-innodisk.png" alt="Innodisk" />
     <span class="slash">/</span>
     <span class="product">iQ-Studio</span>
-    <span class="topbar__version">v0.0.7</span>
+    <span class="topbar__version">v0.0.8</span>
   </a>
   <span class="topbar__divider"></span>
   <nav class="topbar__nav" aria-label="Primary">
@@ -40,7 +40,7 @@
 
 <div class="notice">
   <span class="dot"></span>
-  <span>You are viewing the latest documentation for <strong>iQ-Studio v0.0.7</strong> on Qualcomm Dragonwing QCS9075.</span>
+  <span>You are viewing the latest documentation for <strong>iQ-Studio v0.0.8</strong> on Qualcomm Dragonwing QCS9075.</span>
   <span style="margin-left:auto">MIT License · <a href="https://github.com/InnoIPA/iQ-Studio" target="_blank" rel="noopener">GitHub →</a></span>
 </div>
 
@@ -159,10 +159,10 @@
       <p class="page-title__lede">The fastest path from a booted device to a visible inference result — pick a demo, run one command, see it on screen. To customize a demo, see <a href="../sdks/index.html">SDKs</a>. To deploy your own trained model, see <a href="../model-deploy/index.html">Model Deploy</a>.</p>
     </div>
 
-    <h2 id="demos">Demos</h2>
+    <h2 id="demos" data-reveal>Demos</h2>
 
     <div class="applist">
-      <a class="applist__row" href="iqs-vlm.html">
+      <a class="applist__row" href="iqs-vlm.html" data-reveal data-reveal-delay="1">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
         <div>
           <div class="applist__title">iQS-VLM</div>
@@ -171,7 +171,7 @@
         <span class="applist__tag">iqs-vlm-demo</span>
         <svg class="applist__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
       </a>
-      <a class="applist__row" href="iqs-streampipe.html">
+      <a class="applist__row" href="iqs-streampipe.html" data-reveal data-reveal-delay="2">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         <div>
           <div class="applist__title">iQS-Streampipe</div>
@@ -180,7 +180,7 @@
         <span class="applist__tag">iqs-streampipe</span>
         <svg class="applist__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
       </a>
-      <a class="applist__row" href="iqs-yolov10n.html">
+      <a class="applist__row" href="iqs-yolov10n.html" data-reveal data-reveal-delay="3">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
         <div>
           <div class="applist__title">iQS-YOLOv10n</div>
@@ -191,7 +191,7 @@
       </a>
     </div>
 
-    <h2 id="launch">Launch commands</h2>
+    <h2 id="launch" data-reveal>Launch commands</h2>
     <p>Every application is launched through <code>iqs-launcher</code>. The two-command pattern below brings up the OGenie server first, then the VLM demo client.</p>
 
     <div class="codeblock">
