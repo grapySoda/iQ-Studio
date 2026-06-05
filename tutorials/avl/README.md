@@ -10,6 +10,9 @@ The following figures show the MIPI camera and EP provided by Innodisk based on 
 
 > Note: Camera driver patches are maintained in [iQ-Cam__manifest](https://github.com/InnoIPA/iQ-Cam__manifest). Refer there for release packages aligned with your BSP version.
 
+## GMSL × MIPI Guide
+For an introduction to GMSL cameras and high-speed serial links, see the [GMSL × MIPI Guide](https://htmlpreview.github.io/?https://github.com/grapySoda/iQ-Studio/blob/dev/tutorials/avl/GMSL-MIPI-Guide.html).
+
 ## Supported GMSL Camera List
 ![avl-gmsl.png](./fig/avl-gmsl.png)
 
